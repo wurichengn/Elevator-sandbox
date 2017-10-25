@@ -94,7 +94,7 @@ function (es,floors){
 ## 双向循环移动
 
 ```javascript
-MainTest = function(es,floors){
+function(es,floors){
 
 	//计算时间间隔让电梯间协作
 	var dt = ((floors.length-1)*5)*500/es.length;
@@ -137,7 +137,7 @@ MainTest = function(es,floors){
 	//循环绑定所有电梯
 	for(var i in es)
 		bindOne(i);
-};
+}
 ```
 
 
