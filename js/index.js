@@ -128,6 +128,23 @@
 		//在楼层等待的客户列表
 		var peoples = [];
 
+		//获取用户
+		this.getPeoples = function(){
+			var re = [];
+			for(var i in peoples){
+				var dom = {};
+				for(var j in peoples[i])
+					dom[j] = peoples[i][j];
+				re.push(dom);
+			}
+			return re;
+		}
+
+		//获取楼层号
+		this.getID = function(){
+			return datas.id;
+		}
+
 		//渲染显示效果
 		var render = function(){
 			//设置数量指示
@@ -272,6 +289,18 @@
 
 		this.put = function(people){
 			peoples.push(people);
+		}
+
+		//获取用户
+		this.getPeoples = function(){
+			var re = [];
+			for(var i in peoples){
+				var dom = {};
+				for(var j in peoples[i])
+					dom[j] = peoples[i][j];
+				re.push(dom);
+			}
+			return re;
 		}
 
 		//帧事件
