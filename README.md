@@ -137,7 +137,7 @@ function(es,floors){
 	//循环绑定所有电梯
 	for(var i in es)
 		bindOne(i);
-}
+} 
 ```
 
 
