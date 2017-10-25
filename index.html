@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>电梯沙盒</title>
+	<script type="text/javascript" src="lib/lcg.build.js"></script>
+	<script type="text/javascript" src="js/test.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="lib/codemirror.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="css/theme.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+	<!-- 标题 -->
+	<div class="header">
+		<a>电梯沙盒</a>V1.0.0
+		<span>
+			<a>游戏说明与API</a>
+			<a onclick="setter.show();">场景设置</a>
+		</span>
+	</div>
+
+	<!-- 楼层 -->
+	<div dom-module="floor" class="floor">
+		<a>{{id}}</a>
+		<z>
+			<i lid="up" class="if icon-jiantou"></i>
+			<i lid="down" class="if icon-jiantou-d"></i>
+		</z>
+		<span lid="peoples"></span>
+	</div>
+
+	<!-- 电梯 -->
+	<div dom-module="e" class="e">
+		<div lid="box"><i class="if icon-man"></i>×{{num}}</div>
+		<span lid="gl"></span>
+	</div>
+
+	<!-- 电梯组 -->
+	<div dom-module="floors" class="floors" init>
+		<!-- 楼层 -->
+		<div lid="floors">
+			
+		</div>
+		<!-- 电梯 -->
+		<div class="es" lid="es">
+			
+		</div>
+	</div>
+
+	<!-- 代码编辑器 -->
+	<div class="coder" dom-module="coder" init>
+		<div lid="code" class="code"></div>
+		<p>
+			<a onclick="this.$root.run();">运行</a>
+		</p>
+	</div>
+
+	<!-- 场景设置面板 -->
+	<div class="setter" dom-module="setter" init style="display:none;">
+		<div>
+			<span><a>楼层数</a><input lid="floor" type="number" min="2" max="40" value="2"></span>
+			<span><a>电梯数</a><input lid="e" type="number" min="1" max="11" value="1"></span>
+			<span><a>电梯载客量</a><input lid="Emax" type="number" min="1" max="999" value="4"></span>
+			<span><a>乘客出现频率</a><input lid="cd" type="number" min="1" max="30" value="2"></span>
+		</div>
+		<div><a onclick="this.$root.ok();">确定</a></div>
+	</div>
+
+</body>
+</html>

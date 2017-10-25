@@ -1,0 +1,211 @@
+body{
+	margin:0px;
+	background-color:#f5f6ff;
+}
+
+/*标题*/
+.header{
+	width:1000px;
+	margin:20px auto;
+	color:#777;
+	font-size:20px;
+}
+
+.header>a{
+	display: inline-block;
+	margin-right:20px;
+	font-size: 30px;
+	margin-left:20px;
+	color:#31708f;
+}
+
+.header>span>a{
+	display: inline-block;
+	font-size:16px;
+	margin-left:30px;
+	color:#4c8bf5;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/*编辑器设置*/
+.CodeMirror{
+	height:400px;
+	font-size:14px;
+}
+
+/*演示逻辑组*/
+.floors{
+	width:1000px;
+	margin:30px auto;
+	background-color:#eee;
+	position: relative;
+}
+
+/*楼层相关*/
+.floor{
+	height:60px;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	line-height: 60px;
+	color:#999;
+	font-size:30px;
+	padding-left:40px;
+}
+
+.floor>z{
+	display: inline-block;
+	margin-left:10px;
+	line-height: 20px;
+	height:100%;
+	vertical-align: top;
+	margin-top:10px;
+}
+
+.floor>z>i{
+	display: block;
+}
+
+.floor>span{
+	display: inline-block;
+	margin-left:10px;
+	letter-spacing:-8px;
+	width:80px;
+	text-align: right;
+}
+
+.floors>.es{
+	position: absolute;
+	bottom:0px;
+	left:230px;
+}
+
+/*电梯相关*/
+.e{
+	position: absolute;
+	width:60px;
+	height:60px;
+	left:0px;
+	bottom:0px;
+}
+
+.e>div{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	box-sizing:border-box;
+	border:1px solid #ccc;
+	line-height: 60px;
+	font-size:16px;
+	text-align: center;
+	color:#999;
+	z-index:1;
+}
+
+.e>span{
+	position: absolute;
+	left:0px;
+	height:0px;
+	display: inline-block;
+	width:100%;
+	height:100%;
+}
+
+.e>span>a{
+	display: inline-block;
+	position: absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	background-color:rgba(76,139,245,0.3);
+}
+
+/*代码编辑器*/
+.coder{
+	width:1000px;
+	margin:20px auto;
+	margin-bottom:60px;
+}
+
+.code{
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.coder>p{
+	text-align: right;
+	margin:10px 0px;
+}
+
+.coder>p>a{
+	cursor: default;
+	display: inline-block;
+	width:100px;
+	height:40px;
+	line-height: 40px;
+	background-color:#4c8bf5;
+	color:#fff;
+	font-size:18px;
+	text-align: center;
+	border-radius: 5px;
+	transition:background-color 0.2s;
+}
+
+.coder>p>a:hover{
+	background-color:#5c9bff;
+}
+
+.coder>p>a:active{
+	background-color:#3c7bf2;
+}
+
+
+
+/*设置面板*/
+.setter{
+	position: absolute;
+	width:900px;
+	left:50%;
+	margin-left:-450px;
+	top:100px;
+	background-color: #fff;
+	padding:15px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	z-index:10;
+	color:#777;
+}
+
+.setter>div,.setter>p{
+	padding:15px;
+	margin:0px;
+}
+
+.setter input{
+	margin-left:10px;
+	margin-right:20px;
+	line-height: 16px;
+	height:16px;
+	border:none;
+	border-bottom:1px solid #777;
+	padding:0px 10px;
+	width:40px;
+	outline: none;
+}
+
+.setter>div>a{
+	display: inline-block;
+	width:80px;
+	height:40px;
+	line-height: 40px;
+	background-color:#4c8bf5;
+	color:#fff;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+}
