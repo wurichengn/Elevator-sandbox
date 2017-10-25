@@ -71,6 +71,76 @@
 |st:int|乘客出现时间的时间戳|
 
 
+
+# 示例代码
+
+## 单向循环移动
+```javascript
+function (es,floors){
+	//循环绑定电梯空闲事件
+    for(var i in es){
+      es[i].on("idel",function(){
+          //不是顶层就向上移动
+          if(this.getFloor() < floors.length)
+              this.moveTo(this.getFloor()+1);
+          else
+              //否则移动到1楼
+              this.moveTo(1);
+      });
+    }
+}
+```
+
+## 双向循环移动
+
+```javascript
+MainTest = function(es,floors){
+
+	//计算时间间隔让电梯间协作
+	var dt = ((floors.length-1)*5)*500/es.length;
+
+	//绑定一个电梯
+	var bindOne = function(i){
+		setTimeout(function(){
+			es[i].on("idel",function(){
+				//初始化
+				if(this.isDown == null)
+					this.getDown = false;
+				//判断上下状态
+				if(!this.isDown){
+				    //到顶部切换状态
+					if(this.getFloor() >= floors.length){
+						this.isDown = true;
+						//切换接受乘客的方向
+						this.getDown = true;
+						this.getUp = false;
+						this.moveTo(this.getFloor()-1);
+					}
+					else
+						this.moveTo(this.getFloor()+1);
+				}else{
+				    //到底部切换状态
+					if(this.getFloor() <= 1){
+						this.isDown = false;
+						//切换接受乘客的方向
+						this.getDown = false;
+						this.getUp = true;
+						this.moveTo(this.getFloor()+1);
+					}
+					else
+						this.moveTo(this.getFloor()-1);
+				}
+			});
+		},i*dt);
+	}
+
+	//循环绑定所有电梯
+	for(var i in es)
+		bindOne(i);
+};
+```
+
+
 # 说明
 
 ## 电梯移动速度
